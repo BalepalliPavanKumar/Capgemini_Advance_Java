@@ -39,5 +39,6 @@ public class ProgramTest {
 		String actualres=eoo.evenOrOdd(Integer.parseInt(input));
 		assertEquals(expected,actualres);
 	}
+	
 
 }
