@@ -8,10 +8,8 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        // Create EntityManagerFactory
         EntityManagerFactory emf =Persistence.createEntityManagerFactory("postgres");
 
-        // ---------- Save Aadhar and Room ----------
         EntityManager em1 = emf.createEntityManager();
         em1.getTransaction().begin();
 
@@ -23,8 +21,6 @@ public class MainApp {
 
         em1.getTransaction().commit();
         em1.close();
-
-        // ---------- Create Student ----------
         EntityManager em2 = emf.createEntityManager();
         em2.getTransaction().begin();
 
@@ -33,8 +29,6 @@ public class MainApp {
 
         em2.getTransaction().commit();
         em2.close();
-
-        // ---------- Fetch Student ----------
         EntityManager em3 = emf.createEntityManager();
 
         Student s = em3.find(Student.class, student.getId());
@@ -44,20 +38,16 @@ public class MainApp {
         System.out.println("Room: " + s.getHostelRoom().getRoomNumber());
 
         em3.close();
-
-        // ---------- Delete Student ----------
+        
         EntityManager em4 = emf.createEntityManager();
         em4.getTransaction().begin();
 
-        Student deleteStudent =
-                em4.find(Student.class, student.getId());
+        Student deleteStudent =em4.find(Student.class, student.getId());
 
         em4.remove(deleteStudent);
 
         em4.getTransaction().commit();
         em4.close();
-
-        // Close factory
         emf.close();
     }
 }
