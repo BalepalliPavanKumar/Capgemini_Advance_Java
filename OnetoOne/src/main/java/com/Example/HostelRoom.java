@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class HostelRoom {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String roomNumber;

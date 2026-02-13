@@ -6,7 +6,6 @@ import javax.persistence.*;
 public class AadharCard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String number;
