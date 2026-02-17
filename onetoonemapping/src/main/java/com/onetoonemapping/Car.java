@@ -10,8 +10,14 @@ public class Car {
 	private int id;
 	private String brand;
 	private String model;
-	private String modeYear;
+	private String modelYear;
 	private double price;
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", brand=" + brand + ", model=" + model + ", modelYear=" + modelYear + ", price="
+				+ price + "]";
+	}
+	
 	@OneToOne
 	private Engine engine;
 	public int getId() {
@@ -32,11 +38,17 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getModeYear() {
-		return modeYear;
+	public String getModelYear() {
+		return modelYear;
 	}
-	public void setModeYear(String modeYear) {
-		this.modeYear = modeYear;
+	public void setModelYear(String modelYear) {
+		this.modelYear = modelYear;
+	}
+	public Engine getEngine() {
+		return engine;
+	}
+	public void setEngine(Engine engine) {
+		this.engine = engine;
 	}
 	public double getPrice() {
 		return price;
@@ -44,11 +56,4 @@ public class Car {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	@Override
-	public String toString() {
-		return "Car [id=" + id + ", brand=" + brand + ", model=" + model + ", modeYear=" + modeYear + ", price=" + price
-				+ "]";
-	}
-	
-
 }

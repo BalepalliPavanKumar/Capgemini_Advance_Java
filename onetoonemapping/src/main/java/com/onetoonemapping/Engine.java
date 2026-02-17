@@ -8,9 +8,10 @@ public class Engine {
 	@Id
 	private int id;
 	private String type;
-	private String fuelType;
+	private String fueltype;
 	private String mileage;
 	private String cc;
+	
 	public int getId() {
 		return id;
 	}
@@ -23,11 +24,11 @@ public class Engine {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getFuelType() {
-		return fuelType;
+	public String getFueltype() {
+		return fueltype;
 	}
-	public void setFuelType(String fuelType) {
-		this.fuelType = fuelType;
+	public void setFueltype(String fueltype) {
+		this.fueltype = fueltype;
 	}
 	public String getMileage() {
 		return mileage;
@@ -40,11 +41,6 @@ public class Engine {
 	}
 	public void setCc(String cc) {
 		this.cc = cc;
-	}
-	@Override
-	public String toString() {
-		return "Engine [id=" + id + ", type=" + type + ", fuelType=" + fuelType + ", mileage=" + mileage + ", cc=" + cc
-				+ "]";
 	}
 	
 }
