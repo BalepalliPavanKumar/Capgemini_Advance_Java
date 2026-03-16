@@ -1,0 +1,23 @@
+package com.connectdatabse;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+public class StepsToConnectDataBase {
+	public static void main(String[] args) throws SQLException {
+		//Load the driver class 
+		String url="jdbc:postgresql://localhost:5432/school";
+		String un="postgres";
+		String pwd="root";
+		try {
+			Class.forName("org.postgresql.Driver");
+			//To establish Connection
+			Connection connect=DriverManager.getConnection(url,un,pwd);
+			String sql="insert into student values(103,'miller','miller@gmail.com','male')";
+			System.out.println("Connection created");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+
+}
